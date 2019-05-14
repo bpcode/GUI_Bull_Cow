@@ -18,26 +18,6 @@ g = 1
 r = ['0', '0', '0', '0']
 bull = cow = 0
 
-for i in range(4):
-    r[i] = str(random.randrange(1, 10))
-    j = 0
-    while j < i:
-        if r[i] == r[j]:
-            j = 0
-            r[i] = str(random.randrange(1, 10))
-            continue
-        j += 1
-num = r[0] + r[1] + r[2] + r[3]
-
-top = Tk()
-top.wm_title("Bull and Cow - A number guessing game")
-top.minsize(400, 600)
-L1 = Label(top, text="Enter your number:")
-L1.pack()
-E1 = Entry(top, bd=5)
-E1.pack()
-
-
 def win(g):
     tkMessageBox.showinfo("Game Finish", "Congratulations, You won in "+str(g)+" guesses!!!")
     exit()
@@ -72,13 +52,28 @@ def output():
 
     E1.delete(0, END)
 
+for i in range(4):
+    r[i] = str(random.randrange(1, 10))
+    j = 0
+    while j < i:
+        if r[i] == r[j]:
+            j = 0
+            r[i] = str(random.randrange(1, 10))
+            continue
+        j += 1
+num = r[0] + r[1] + r[2] + r[3]
 
+top = Tk()
+top.wm_title("Bull and Cow - A number guessing game")
+top.minsize(400, 600)
+L1 = Label(top, text="Enter your number:")
+L1.pack()
 
-
+E1 = Entry(top, bd=5)
+E1.pack()
 B = Button(top, text="Enter", command=output)
-
 B.pack()
-
 L2 = Label(top, text="\nYour Guess\tBull\tCow")
 L2.pack()
+
 top.mainloop()
