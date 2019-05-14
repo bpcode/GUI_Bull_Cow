@@ -13,7 +13,7 @@ global bull
 global cow
 global g
 
-g=1
+g = 1
 
 r = ['0', '0', '0', '0']
 bull = cow = 0
