@@ -39,7 +39,7 @@ E1.pack()
 
 
 def win(g):
-    tkMessageBox.showinfo("Game Finish", "Congratulations, You win in "+str(g)+" guesses!!!")
+    tkMessageBox.showinfo("Game Finish", "Congratulations, You won in "+str(g)+" guesses!!!")
     exit()
 
 
@@ -50,8 +50,8 @@ def output():
         tkMessageBox.showinfo("!!!!!!", "Wrong input. Please input 4 digit number.")
     elif int(x)>9999 or int(x)<1000:
         tkMessageBox.showinfo("!!!!!!", "Wrong input. Please input 4 digit number.")
-    elif x == num:
-        win(g)
+#    elif x == num:
+#        win(g)
     else:
         bull = cow = 0
         global g
@@ -66,6 +66,10 @@ def output():
         L0 = Label(top, text="\n" + x + "\t\t" + str(bull) + "\t" + str(cow))
         g+=1
         L0.pack()
+    if x == num:
+        L0 = Label("This is the right guess!")
+        win(g)
+
     E1.delete(0, END)
 
 
