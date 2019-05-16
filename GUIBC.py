@@ -16,6 +16,7 @@ global g
 g = 1
 
 r = ['0', '0', '0', '0']
+
 bull = cow = 0
 
 def win(g):
@@ -47,7 +48,8 @@ def output():
         g+=1
         L0.pack()
     if x == num:
-        L0 = Label("This is the right guess!")
+        L0 = Label(top, text="\nThis is the right guess!")
+        L0.pack()
         win(g)
 
     E1.delete(0, END)
@@ -62,6 +64,7 @@ for i in range(4):
             continue
         j += 1
 num = r[0] + r[1] + r[2] + r[3]
+
 
 top = Tk()
 top.wm_title("Bull and Cow - A number guessing game")
